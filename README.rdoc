@@ -1,6 +1,6 @@
 = db_chain
 
-Description goes here.
+Fancy DB Config Util
 
 == Contributing to db_chain
  
