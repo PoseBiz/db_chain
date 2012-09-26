@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/db_chain'
+
+puts DbChain.from_sdb(ARGV[0]).databases.inspect
