@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "db_chain"
   gem.homepage = "http://github.com/andrewvc/db_chain"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
+  gem.summary = %Q{Fancy DB Config Stuff}
   gem.description = %Q{Pose Internal DB Conf}
   gem.email = "andrew@andrewvc.com"
   gem.authors = ["Andrew Cholakian"]
