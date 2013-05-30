@@ -184,9 +184,9 @@ class DbChain
 
         attrs[:cache_hit_ratio] = attrs[:blks_hit].to_f / (attrs[:blks_hit] + attrs[:blks_read])
 
-        attrs[:running_queries_count] = conn.exec("SELECT COUNT(*) AS count FROM pg_stat_activity  WHERE usename != 'collectd' AND current_query NOT LIKE '<%'")[0]["count"].to_i
+        attrs[:running_queries_count] = conn.exec("SELECT COUNT(*) AS count FROM pg_stat_activity  WHERE usename != 'collectd' AND query NOT LIKE '<%'")[0]["count"].to_i
 
-        attrs[:slow_queries] = conn.exec("SELECT current_query FROM pg_stat_activity  WHERE username != 'collectd' AND current_query NOT LIKE '<%' AND (now()-query_start) > '1 seconds' ORDER BY query_start ASC").map {|r| r["current_query"]}
+        attrs[:slow_queries] = conn.exec("SELECT query FROM pg_stat_activity  WHERE username != 'collectd' AND query NOT LIKE '<%' AND (now()-query_start) > '1 seconds' ORDER BY query_start ASC").map {|r| r["query"]}
         
         conn.close
       end
